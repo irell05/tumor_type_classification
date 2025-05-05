@@ -1,4 +1,4 @@
-# Kidney Tumor Detection and Classification (Modifikasi dari Dalia Alzubi)
+# Kidney Tumor Detection and Classification 
 
 Notebook ini merupakan pengembangan dari proyek awal milik [Dalia Alzubi](https://github.com/DaliaAlzubi/Kidney_Tumor), yang awalnya hanya mendeteksi keberadaan tumor ginjal. Versi ini, dimodifikasi  menambahkan sejumlah fitur penting untuk mengklasifikasikan *jenis tumor ginjal* secara lebih komprehensif dan praktis.
 
