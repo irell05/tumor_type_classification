@@ -1,57 +1,68 @@
----
+# Kidney Tumor Detection and Classification (Modifikasi dari Dalia Alzubi)
 
-## Model Architecture
-
-- *Base Model*: ResNet50 (pretrained on ImageNet, include_top=False)
-- *Custom Top Layers*:
-  - GlobalAveragePooling2D
-  - Dense(128, activation='relu')
-  - Dense(3, activation='softmax')
-- *Training Enhancements*:
-  - *Data Augmentation*: rotation, flipping, zoom, brightness
-  - *Callbacks*: EarlyStopping, ModelCheckpoint
+Notebook ini merupakan pengembangan dari proyek awal milik [Dalia Alzubi](https://github.com/DaliaAlzubi/Kidney_Tumor), yang awalnya hanya mendeteksi keberadaan tumor ginjal. Versi ini, dimodifikasi oleh [irell05](https://github.com/irell05), menambahkan sejumlah fitur penting untuk mengklasifikasikan *jenis tumor ginjal* secara lebih komprehensif dan praktis.
 
 ---
 
-## Evaluation Metrics
+## Tujuan Proyek
 
-| Metric     | CNN (Original) | ResNet50 (Modified) |
-|------------|----------------|---------------------|
-| Accuracy   | 91.8%          | *96.2%*           |
-| Precision  | 0.92           | *0.96*            |
-| Recall     | 0.91           | *0.97*            |
-
-Evaluation includes:
-- Confusion Matrix
-- Classification Report
-- Training and Validation Curve Visualization
+- *Dalia Alzubi*: Deteksi keberadaan tumor ginjal (3 kelas)
+- *irell05: Klasifikasi **empat jenis citra ginjal*: cyst, normal, stone, tumor
 
 ---
 
-## How to Run (via Google Colab)
+## Perubahan & Peningkatan
 
-1. Clone or open directly in Colab:
-   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/irell05/Kidney_Tumor_Detection_And_Classification/blob/main/Tumor_type_classification.ipynb)
+### 1. Dataset & Kelas
+- *Asli*: 3 kelas (tergantung dataset)
+- *Modifikasi*: 4 kelas → cyst, normal, stone, tumor
+- Struktur dataset dirancang per direktori kelas agar dapat diproses otomatis
 
-2. Mount your Google Drive or upload dataset folders.
+### 2. Arsitektur Model CNN
+- *Asli*: CNN sederhana
+- *Modifikasi*:
+  - CNN dengan 3+ Conv2D layers
+  - Penambahan Dropout, BatchNormalization
+  - Lebih dalam dan robust untuk klasifikasi multi-kelas
 
-3. Run all cells sequentially to train and evaluate the model.
+### 3. Visualisasi & Evaluasi Model
+- Penambahan grafik:
+  - Accuracy vs Validation Accuracy
+  - Loss vs Validation Loss
+- Performa evaluasi:
+  - Confusion Matrix
+  - Classification Report (Precision, Recall, F1-Score)
+
+### 4. Fitur Prediksi Gambar Individu
+- Fungsi prediksi gambar tunggal
+- Gambar yang diklasifikasi akan *disimpan dalam folder output* sesuai kelas hasil prediksi (misal: /result/tumor/filename.jpg)
+
+### 5. Ukuran Gambar
+- Gambar diubah ke ukuran *64x64* agar lebih ringan dan cepat diproses, cocok untuk CNN kustom
 
 ---
 
-## Related Paper
+## Struktur Folder
 
-A short research paper is available, containing:
-- Literature review on kidney tumor classification
-- Methodology using ResNet50 and augmentation
-- Results analysis and confusion matrix
-- Suggestions for future work
 
 ---
 
-## Dependencies
+## Cara Menjalankan Notebook
 
-Install required packages:
+1. Upload dataset dengan struktur sesuai folder dataset/
+2. Jalankan semua sel dalam notebook
+3. Upload gambar untuk klasifikasi → hasil prediksi akan otomatis dipindahkan ke folder result/<kelas_prediksi>/
 
-```bash
-pip install tensorflow numpy matplotlib scikit-learn seaborn
+---
+
+## Catatan
+
+- Model tidak menggunakan pretrained (misalnya MobileNet), melainkan CNN buatan sendiri
+- Dapat dikembangkan lebih lanjut dengan model transfer learning dan GUI prediksi
+
+---
+
+## Sumber
+
+- [Notebook Asli - Dalia Alzubi](https://github.com/DaliaAlzubi/Kidney_Tumor)
+- [Modifikasi oleh irell05](https://github.com/irell05/Kidney_Tumor_Detection_And_Classification)
