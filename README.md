@@ -1,13 +1,13 @@
 # Kidney Tumor Detection and Classification (Modifikasi dari Dalia Alzubi)
 
-Notebook ini merupakan pengembangan dari proyek awal milik [Dalia Alzubi](https://github.com/DaliaAlzubi/Kidney_Tumor), yang awalnya hanya mendeteksi keberadaan tumor ginjal. Versi ini, dimodifikasi oleh [irell05](https://github.com/irell05), menambahkan sejumlah fitur penting untuk mengklasifikasikan *jenis tumor ginjal* secara lebih komprehensif dan praktis.
+Notebook ini merupakan pengembangan dari proyek awal milik [Dalia Alzubi](https://github.com/DaliaAlzubi/Kidney_Tumor), yang awalnya hanya mendeteksi keberadaan tumor ginjal. Versi ini, dimodifikasi  menambahkan sejumlah fitur penting untuk mengklasifikasikan *jenis tumor ginjal* secara lebih komprehensif dan praktis.
 
 ---
 
 ## Tujuan Proyek
 
 - *Dalia Alzubi*: Deteksi keberadaan tumor ginjal (3 kelas)
-- *irell05: Klasifikasi **empat jenis citra ginjal*: cyst, normal, stone, tumor
+- *modifikasi: Klasifikasi **empat jenis citra ginjal*: cyst, normal, stone, tumor
 
 ---
 
@@ -40,12 +40,6 @@ Notebook ini merupakan pengembangan dari proyek awal milik [Dalia Alzubi](https:
 ### 5. Ukuran Gambar
 - Gambar diubah ke ukuran *64x64* agar lebih ringan dan cepat diproses, cocok untuk CNN kustom
 
----
-
-## Struktur Folder
-
-
----
 
 ## Cara Menjalankan Notebook
 
@@ -65,4 +59,4 @@ Notebook ini merupakan pengembangan dari proyek awal milik [Dalia Alzubi](https:
 ## Sumber
 
 - [Notebook Asli - Dalia Alzubi](https://github.com/DaliaAlzubi/Kidney_Tumor)
-- [Modifikasi oleh irell05](https://github.com/irell05/Kidney_Tumor_Detection_And_Classification)
+
